@@ -1,0 +1,4 @@
+#!/bin/bash
+# SPDX-License-Identifier: MIT
+unset LD_LIBRARY_PATH
+exec "$HOME/.local/bin/box64" "${WINEDIR}/bin/wineserver" "$@"

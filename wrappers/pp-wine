@@ -1,0 +1,8 @@
+#!/bin/bash
+# SPDX-License-Identifier: MIT
+unset LD_LIBRARY_PATH
+export WINE="${WINEDIR}/bin/wine64"
+export WINELOADER="$WINE"
+export WINESERVER="${WINEDIR}/bin/wineserver"
+export WINEDLLOVERRIDES="${WINEDLLOVERRIDES:+${WINEDLLOVERRIDES};}mscoree,mshtml="
+exec "$HOME/.local/bin/box64" "$WINE" "$@"
